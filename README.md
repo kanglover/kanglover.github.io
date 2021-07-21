@@ -203,6 +203,8 @@ disqus_username: username
 
 网站分析，现在支持百度统计和Google Analytics。需要去官方网站注册一下，然后将返回的code贴在下面：
 
+[Baidu Analytics](http://tongji.baidu.com/web/welcome/login) 和 [Google Analytics](http://www.google.cn/analytics/)
+
 ```
 # Baidu Analytics
 ba_track_id: ba_track_id
