@@ -1,0 +1,24 @@
+I"�<blockquote>
+  <p>在C++中，数组是一个非常有用的东西，它可以用vector这个库实现</p>
+</blockquote>
+
+<p>首先，我们要引用这个库，可以用#include实现:</p>
+
+<p><code class="language-plaintext highlighter-rouge">#include &lt;vector&gt;</code></p>
+
+<p>然后定义一个数组，注意：<strong>这可跟定义变量不一样，是有特殊语法的</strong></p>
+
+<p>语法如下：</p>
+
+<p><code class="language-plaintext highlighter-rouge">vector&lt;数据类型&gt; 你的数组名;</code></p>
+
+<p>[数据类型]可以是int(整数),char(字符),str(字符串),就是你的数组里要存的东西。</p>
+
+<p>如何往里放内容？</p>
+
+<p>用 <code class="language-plaintext highlighter-rouge">数组名.push_back(内容);</code></p>
+
+<p>如何读内容？</p>
+
+<p>这就需要理解数组的排序了，用<code class="language-plaintext highlighter-rouge">cout&lt;&lt;数组名[内容所处的位置]&lt;&lt;endl;</code></p>
+:ET

@@ -1,0 +1,16 @@
+I"�<blockquote>
+  <p>一起来毁掉极域电子教室，这玩意把我烦死了</p>
+</blockquote>
+
+<p>破解源代码在 https://github.com/kalicn/KaliJiYuHuier 哦，感兴趣自己研究，若不想编译，请看README.md里的下载地址，这不是我原创的</p>
+
+<h5 id="敲黑板看好了">敲黑板！！看好了！</h5>
+
+<p>方法1：直接运行下好的文件</p>
+
+<p>方法2: 打开进程管理器，找到 <strong>“StudentMain.exe”</strong> 结束进程,如果不行，下载一个PCHunter或360进程管家杀掉它</p>
+
+<p>方法3： PE系统里删文件，应该在C:/Program Files/ 里面，一定用PE，否则会报错</p>
+
+<p>哇哈哈！</p>
+:ET

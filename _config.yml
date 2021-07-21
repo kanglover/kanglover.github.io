@@ -1,0 +1,86 @@
+# Site settings
+title: Shao Kang Blog
+SEOTitle: 邵康的博客
+header-img: img/post-bg-desk.jpg
+email: kanglover00@outlook.com
+description: "人生在勤，不索何获。"
+keyword: "ShaoKang Blog, Shaokang的小站, ShaoKang的博客, shaokang, 邵康"
+url: "https://kanglover.github.io"          # your host, for absolute URL
+baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
+github_repo: "https://github.com/kanglover/kanglover.github.io.git" # you code repository
+
+# Sidebar settings
+sidebar: true                           # whether or not using Sidebar.
+sidebar-about-description: "Better late than never"
+sidebar-avatar: /img/yeswecode.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+
+
+
+# SNS settings
+RSS: true
+github_username:    kanglover
+zhihu_username:     绿吘话桑
+
+
+
+
+
+# Build settings
+# from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
+permalink: pretty
+paginate: 13
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
+
+
+
+# Gems
+# from PR#40, to support local preview for Jekyll 3.0
+# gems: [jekyll-paginate,jemoji,jekyll-sitemap]
+gems: [jekyll-paginate] #页码插件
+
+
+# Markdown settings
+# replace redcarpet to kramdown,
+# although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
+# document: http://jekyllrb.com/docs/configuration/#kramdown
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM                            # use Github Flavored Markdown !important
+
+
+
+# 评论系统
+# Gitalk
+gitalk:
+  enable: true   #是否开启Gitalk评论
+  clientID: d1466c579528d184ae8d   #生成的clientID
+  clientSecret: de41bb9bbaebc3a9dbe1b2d4e49eb76729a03e5d  #生成的clientSecret
+  repo: kanglover.github.io    #仓库名称
+  owner: kanglover    #github用户名
+  admin: kanglover
+  distractionFreeMode: false #是否启用类似FB的阴影遮罩
+  perPage: 15
+
+
+# 统计
+# Analytics settings
+# Baidu Analytics
+ba_track_id: cd752d3ba4f290f3cc1e7944f0efd4d0
+ga_track_id: 'G-0Y1W0NV7DF'
+ga_domain: auto
+
+
+# Featured Tags
+featured-tags: true                     # 是否使用首页标签
+featured-condition-size: 1             # 相同标签数量大于这个数，才会出现在首页
+
+
+# Friends
+friends: [
+    {
+        title: "我的CSDN",
+        href: "https://blog.csdn.net/qq_40336494"
+    }
+]

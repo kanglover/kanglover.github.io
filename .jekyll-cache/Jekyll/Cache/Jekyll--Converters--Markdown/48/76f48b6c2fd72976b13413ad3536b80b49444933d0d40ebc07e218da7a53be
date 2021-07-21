@@ -1,0 +1,44 @@
+I"><blockquote>
+  <p>写一个基本的程序吧~</p>
+</blockquote>
+
+<h1 id="1准备编译器">1.准备编译器</h1>
+
+<p>按照 “搭建Ubuntu工作环境” 里的就行了 ，我们用g++</p>
+
+<h1 id="2开始学习编写hello-world">2.开始学习编写Hello world</h1>
+
+<p>打开文本编辑器，输入以下代码：</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span> <span class="p">(){</span>
+
+<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">"Hello World!"</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="3讲解">3.讲解</h1>
+
+<p>#include <iostream> 是引入库iostream,也就是I/O输入输出流。</iostream></p>
+
+<p>using namespace std; 是一个必备的语法，它导入命名空间”std”，最后以”;”结尾，这是C++中必备的结束符</p>
+
+<p>int main (){ 开始了一个主程序</p>
+
+<p>cout«“Hello World!«endl; 输出”Hello World!”并换行</p>
+
+<p>return 1; 也是必备的,返回一个值（其实我没弄懂为什么，哈哈）
+最后以 “}” 结束main程序，代表结束函数/方法</p>
+
+<p># 4.编译运行</p>
+
+<p>g++ -o hello 你写的程序名
+ ./hello</p>
+
+:ET
