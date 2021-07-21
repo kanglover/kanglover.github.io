@@ -3,9 +3,6 @@ layout: page
 description: "人生在勤，不索何获."
 ---
 
-
-<meta name="msvalidate.01" content="346D396674F333FB27486CB2CC677C68" />
-{{paginator.posts}}
 {% for post in paginator.posts %}
 <div class="post-preview">
     <a href="{{ post.url | prepend: site.baseurl }}">
