@@ -1,18 +1,17 @@
 ---
 layout:     post
 title:      css height auto 探秘
-subtitle:   height: auto
 date:       2020-07-14
 author:     shaokang
 header-img: img/css.jpg
 catalog: true
 tags:
-    - Blog
+    - CSS
 ---
 
-## 为什么要写这篇博客？
+### 为什么要写这篇博客？
 
-前两天在开发时中发现项目中一个 bug: height: auto 导致动画失效问题。
+前两天在开发时发现项目中一个 bug: `height: auto 导致动画失效` 问题。
 大致的代码如下：
 ```css
 --hidden
@@ -30,7 +29,7 @@ tags:
 --animation
     transition: all .3s ease
 ```
-问题：显示元素时动画正常，而隐藏元素时动画却失效了。
+出现的问题是：显示元素时动画正常，而隐藏元素时动画却失效了。
 
 为什么动画会失效呢？  
 其实 css 动画是一个过渡过程，是从一个值到另一个值的过渡，但由于隐藏时 height: auto，浏览器拿不到一个明确的值，不知道该如何变化，于是就直接返回到了初始值，最终看不到过渡的效果。
@@ -82,10 +81,9 @@ tags:
 解释: 该节点的父元素没有设置高度(默认auto)，本身设置成 100% 的话(被子元素高度撑开)，会根据其内容自动计算其高度
 
 参考：
-[stackoverflow](https://stackoverflow.com/questions/3508605/how-can-i-transition-height-0-to-height-auto-using-css)  
-[w3c](https://github.com/w3c/csswg-drafts/issues/626)
+[stackoverflow](https://stackoverflow.com/questions/3508605/how-can-i-transition-height-0-to-height-auto-using-css)  [w3c](https://github.com/w3c/csswg-drafts/issues/626)
 
-### height: auto 和 height: 100%
+## height: auto 和 height: 100%
 
 height:auto，是指根据块内内容自动调节高度。
 height:100%，是指其相对父块高度而定义的高度。  
@@ -113,7 +111,7 @@ height:auto 是随内容的高度而撑开的，而 height:100% 则是根据父�
 >3. The line box height is the distance between the uppermost box top and the lowermost box bottom. (This includes the strut, as explained under 'line-height' below.)
 意思是说 inline-block 默认放在 baseline 基线上，其高度是由 line-height 和 font-size 属性决定的.
 
-如何解决(parent 高度 为 0px)：parent 设置 line-height: 0 / font-size: 0。
+如何解决(parent 高度保持 0px)：parent 设置 line-height: 0 / font-size: 0。
 
 又一个例子
 ```
