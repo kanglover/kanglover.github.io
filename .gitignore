@@ -35,3 +35,7 @@ Temporary Items
 # debug file
 _site
 .jekyll-cache
+
+# Dependency directories
+node_modules/
+package-lock.json
