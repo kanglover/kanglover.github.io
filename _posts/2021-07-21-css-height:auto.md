@@ -34,7 +34,7 @@ tags:
 为什么动画会失效呢？  
 其实 css 动画是一个过渡过程，是从一个值到另一个值的过渡，但由于隐藏时 height: auto，浏览器拿不到一个明确的值，不知道该如何变化，于是就直接返回到了初始值，最终看不到过渡的效果。
 
-并且在 [mozila](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions) 也说了不建议用在动画过程中使用 auto
+并且在 [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions) 也说了不建议用在动画过程中使用 auto
 > The auto value is often a very complex case. The specification recommends not animating from and to auto. Some user agents, like those based on Gecko, implement this requirement and others, like those based on WebKit, are less strict. Using animations with auto may lead to unpredictable results, depending on the browser and its version, and should be avoided.
 
 ### 解决方案
