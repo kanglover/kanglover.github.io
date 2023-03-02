@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      React-Fiber
-date:       2022-09-21
+date:       2022-12-07
 author:     shaokang
 header-img: img/react.png
 catalog: true
@@ -11,7 +11,7 @@ tags:
 ---
 
 ## 前言
-React 16 采用了一个全新的架构 --- Fiber，其最大的使命是解决大型 React 项目的性能问题。React 早期的优化都是停留于 JS 层面（vdom 的 create/diff），诸如减少组件的复杂度（Stateless），减少向下diff的规模(SCU)，减少 diff 的成本(immutable.js)。React16 则升级到浏览器渲染机制层面, 在 patch 上取得了突破。
+React 16 采用了一个全新的架构 --- Fiber，其最大的使命是解决大型 React 项目的性能问题。React 早期的优化都是停留于 JS 层面（vdom 的 create/diff），诸如减少组件的复杂度（Stateless），减少向下 diff 的规模(SCU)，减少 diff 的成本(immutable.js)。React16 则升级到浏览器渲染机制层面, 在 patch 上取得了突破。
 
 ## 是什么？
 Fiber 是 React 16 中采用的新协调（reconciliation）引擎，主要目标是支持虚拟 DOM 的渐进式渲染。
@@ -49,6 +49,7 @@ Fiber 节点的大致结构：
     return: Fiber | null, // 父节点
     child: Fiber | null, // 子节点
     sibling: Fiber | null, // 同级节点
+    // fiber的版本池，即记录fiber更新过程，便于恢复
     alternate: Fiber | null, // diff 的变化记录在这个节点上
     ...
 }
@@ -77,10 +78,24 @@ Fiber 的主要工作流程：
 
 reconciler 阶段可能执行多次，这样也会导致 willXXX 钩子执行多次，违反它们的语义，它们的废弃是不可逆转的。在进入 commit 阶段时，组件多了一个新钩子叫getSnapshotBeforeUpdate，它与commit阶段的钩子一样只执行一次。
 
+废弃：
+* componentWillMount
+* componentWillUpdate
+* componentWillReceiveProps
+
+新增：
+* static getDerivedStateFromProps(props, state)
+* getSnapshotBeforeUpdate(prevProps, prevState)
+* componentDidCatch
+* static getDerivedStateFromError
+>getDerivedStateFromError 是在 reconciliation 阶段触发，所以 getDerivedStateFromError进行捕获错误后进行组件的状态变更，不允许出现副作用。componentDidCatch 因为在 commit阶段，因此允许执行副作用。 它应该用于记录错误之类的情况：
+
 ## 总结
 React Fiber 是 React 框架重大的一次更新，解决了React项目严重依赖于手工优化的痛点，通过系统级别的时间调度，实现划时代的性能优化。
 
-参考资源：https://zhuanlan.zhihu.com/p/37095662
+参考资源：
+* https://zhuanlan.zhihu.com/p/37095662
+* https://juejin.cn/post/6844904019660537869#heading-36
 
 ## Vue 为什么不需要 fiber
 Vue 使用 Object.defineProperty（vue@3迁移到了Proxy）对数据的设置（setter）和获取（getter）做了劫持，通过 nextTick 实现异步任务地更新。因此 Vue 能准确知道视图模版中哪一块更新了数据，因此能够准确地渲染视图。  
