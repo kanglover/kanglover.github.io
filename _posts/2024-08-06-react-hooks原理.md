@@ -82,7 +82,7 @@ React Hooks 是一个`链表结构`，每个 Hook 对象都包含一个 next 指
 
 ### memoizedState
 
-hook 对象中的 memoizedStat e 属性和 fiber 的 memoizedState 属性含义是不同的。
+hook 对象中的 memoizedState 属性和 fiber 的 memoizedState 属性含义是不同的。
 
 **useState**
 
